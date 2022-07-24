@@ -1,0 +1,77 @@
+{"properties": [
+  {
+    "name": "Ilibrary.app.jwtCookieName",
+    "type": "java.lang.String",
+    "description": "A description for 'Ilibrary.app.jwtCookieName'"
+  },
+  {
+    "name": "Ilibrary.app.jwtSecret",
+    "type": "java.lang.String",
+    "description": "A description for 'Ilibrary.app.jwtSecret'"
+  },
+  {
+    "name": "Ilibrary.app.jwtSecret",
+    "type": "java.lang.String",
+    "description": "A description for 'Ilibrary.app.jwtSecret'"
+  },
+  {
+    "name": "Ilibrary.app.jwtSecret",
+    "type": "java.lang.String",
+    "description": "A description for 'Ilibrary.app.jwtSecret'"
+  },
+  {
+    "name": "Ilibrary.app.jwtSecret",
+    "type": "java.lang.String",
+    "description": "A description for 'Ilibrary.app.jwtSecret'"
+  },
+  {
+    "name": "Ilibrary.app.jwtSecret",
+    "type": "java.lang.String",
+    "description": "A description for 'Ilibrary.app.jwtSecret'"
+  },
+  {
+    "name": "Ilibrary.app.jwtSecret",
+    "type": "java.lang.String",
+    "description": "A description for 'Ilibrary.app.jwtSecret'"
+  },
+  {
+    "name": "Ilibrary.app.jwtSecret",
+    "type": "java.lang.String",
+    "description": "A description for 'Ilibrary.app.jwtSecret'"
+  },
+  {
+    "name": "sicurezza.uri",
+    "type": "java.lang.String",
+    "description": "A description for 'sicurezza.uri'"
+  },
+  {
+    "name": "security.uri",
+    "type": "java.lang.String",
+    "description": "A description for 'security.uri'"
+  },
+  {
+    "name": "security.refresh",
+    "type": "java.lang.String",
+    "description": "A description for 'security.refresh'"
+  },
+  {
+    "name": "security.header",
+    "type": "java.lang.String",
+    "description": "A description for 'security.header'"
+  },
+  {
+    "name": "security.prefix",
+    "type": "java.lang.String",
+    "description": "A description for 'security.prefix'"
+  },
+  {
+    "name": "security.expiration",
+    "type": "java.lang.String",
+    "description": "A description for 'security.expiration'"
+  },
+  {
+    "name": "security.secret",
+    "type": "java.lang.String",
+    "description": "A description for 'security.secret'"
+  }
+]}
