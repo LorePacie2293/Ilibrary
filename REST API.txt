@@ -3,75 +3,75 @@
 BOOKS
 
 
-/api/books/get/byAll 							-- Ottiene la lista completa di libri.		
-/api/books/get/byId/{bookId}						-- Ottiene un libro specificando ID	
-/api/books/get/byTitle/{bookTitle}					-- Ottiene una LISTA di libri specificando TITLE	
-/api/books/get/byAuthFname/{authFname}				-- Ottiene una LISTA di libri specificando AUTHOR FIRST NAME							
-/api/books/get/byAuthLname/{authLname}				-- Ottiene una LISTA di libri specificando AUTHOR LAST NAME
-/api/books/get/byYear/{bookYear}					-- Ottiene una LISTA di libri specificando AUTHOR YEAR 
-/api/books/get/byStockQuantity/{quantity}				-- Ottiene una LISTA di libri specificando STOCK QUANTITY
-/api/books/get/byPages/{pages}					-- Ottiene una LISTA di libri specificando PAGES
-/api/books/get/byPrice/{price}					-- Ottiene una LISTA di libri specificando PRICE
-/api/books/get/byCategory/{idCategory}				-- Ottiene una LISTA di libri specificando ID di una GENERE
+/api/books/get/byAll 							                    -- Ottiene la lista completa di libri.		
+/api/books/get/byId/{bookId}						              -- Ottiene un libro specificando ID	
+/api/books/get/byTitle/{bookTitle}					          -- Ottiene una LISTA di libri specificando TITLE	
+/api/books/get/byAuthFname/{authFname}				        -- Ottiene una LISTA di libri specificando AUTHOR FIRST NAME							
+/api/books/get/byAuthLname/{authLname}				        -- Ottiene una LISTA di libri specificando AUTHOR LAST NAME
+/api/books/get/byYear/{bookYear}					            -- Ottiene una LISTA di libri specificando AUTHOR YEAR 
+/api/books/get/byStockQuantity/{quantity}				      -- Ottiene una LISTA di libri specificando STOCK QUANTITY
+/api/books/get/byPages/{pages}					              -- Ottiene una LISTA di libri specificando PAGES
+/api/books/get/byPrice/{price}					              -- Ottiene una LISTA di libri specificando PRICE
+/api/books/get/byCategory/{idCategory}				        -- Ottiene una LISTA di libri specificando ID di una GENERE
 
 USER
 
-/api/users/post 								-- Inserisce un nuovo USER
+/api/users/post 							                      	-- Inserisce un nuovo USER
 
 JWT
 
-/auth										-- Genera JWT TOKEN
-/refresh									-- AGGIORNA JWT TOKEN
+/auth										                              -- Genera JWT TOKEN
+/refresh									                            -- AGGIORNA JWT TOKEN
 
 IMAGE
-
-/api/images/post/upload							-- Effettua l'UPLOAD di una IMG, e la memorizza nel db
-/api/images/get/{imageName}						-- Ottiene una IMG specificando IMAGE NAME
+  
+/api/images/post/upload						                   -- Effettua l'UPLOAD di una IMG, e la memorizza nel db
+/api/images/get/{imageName}						               -- Ottiene una IMG specificando IMAGE NAME
 
 ------------------------------------------ USER ------------------------------------------------
 
 BOOKS
 
-/api/books/get/byOrdine/{idOrdine}					-- Ottiene una LISTA di libri CONTENUTI in un'ordine, specificando ID ORDINE			
-/api/books/get/byCart/{username}					-- Ottiene una LISTA di libri CONTENUTI in un CART, specificando USERNAME 
+/api/books/get/byOrdine/{idOrdine}					         -- Ottiene una LISTA di libri CONTENUTI in un'ordine, specificando ID ORDINE			
+/api/books/get/byCart/{username}				             -- Ottiene una LISTA di libri CONTENUTI in un CART, specificando USERNAME 
 
 ORDINI
 
-/api/ordini/post/Users/byUsername/{username}			-- Inserisce un nuovo ordine ad uno USER prelevando i libri dal CART 
-/api/ordini/get/byUsername/{username}				-- Ottiene tutti gli ordini di uno USER(username)
+/api/ordini/post/Users/byUsername/{username}			   -- Inserisce un nuovo ordine ad uno USER prelevando i libri dal CART 
+/api/ordini/get/byUsername/{username}				         -- Ottiene tutti gli ordini di uno USER(username)
 
 
 CART
 
-/api/carts/get/byUsername/{username}				-- Ottiene il CART di uno USER(username)
-/api/carts/get/byBookId/{bookId}					-- Ottiene una LISTA di CART, che contengono all'interno un determinato BOOK(BOOK ID)
-/api/carts/post/{username}/books/{bookId}				-- Inserisce un BOOK(BOOK ID) in un determinato CART(USERNAME) specificando il BOOK ID
-/api/carts/post/{username}/booksByTitle/{bookTitle} 		-- Inserisce un BOOK(BOOK TITLE) in un determinato CART(USERNAME) specificando il BOOK ID
-/api/carts/delete/{username}/books/{bookId}			-- Rimuove un BOOK(BOOK ID) da un determinato CART(USERNAME) 
+/api/carts/get/byUsername/{username}				          -- Ottiene il CART di uno USER(username)
+/api/carts/get/byBookId/{bookId}					            -- Ottiene una LISTA di CART, che contengono all'interno un determinato BOOK(BOOK ID)
+/api/carts/post/{username}/books/{bookId}				      -- Inserisce un BOOK(BOOK ID) in un determinato CART(USERNAME) specificando il BOOK ID
+/api/carts/post/{username}/booksByTitle/{bookTitle} 	-- Inserisce un BOOK(BOOK TITLE) in un determinato CART(USERNAME) specificando il BOOK ID
+/api/carts/delete/{username}/books/{bookId}			      -- Rimuove un BOOK(BOOK ID) da un determinato CART(USERNAME) 
 /api/carts/delete/{username}/booksByTitle/{bookTitle}		-- Rimuove un BOOK(BOOK TITLE) da un determinato CART(USERNAME) 
 
 ------------------------------------------ ADMIN ------------------------------------------------
 
 BOOKS
 
-/api/books/post								-- Aggiunge un nuovo libro
-/api/books/put								-- Aggiorna un libro
-/api/books/delete/{idBook}						-- Elimina un libro (ID BOOK)
+/api/books/post								                        -- Aggiunge un nuovo libro
+/api/books/put								                        -- Aggiorna un libro
+/api/books/delete/{idBook}						                -- Elimina un libro (ID BOOK)
 
 USER
 
-/api/users/get/byAll 							-- Ottiene la lista completa degli users registrati
-/api/users/get/byUsername/{username}				-- Ottiene un'utente registrato da USERNAME
-/api/users/delete/byUsername/{username}				-- Elimina un'utente
+/api/users/get/byAll 							                    -- Ottiene la lista completa degli users registrati
+/api/users/get/byUsername/{username}				          -- Ottiene un'utente registrato da USERNAME
+/api/users/delete/byUsername/{username}				        -- Elimina un'utente
 
 ORDINI
 
-/api/ordini/get/byAll							-- Ottiene la LISTA completa degli ordini effettuati
-/api/ordini/delete/byIdOrdine/{ordineId}				-- Elimina un'ordine (ORDINE ID)
+/api/ordini/get/byAll							                    -- Ottiene la LISTA completa degli ordini effettuati
+/api/ordini/delete/byIdOrdine/{ordineId}				      -- Elimina un'ordine (ORDINE ID)
 
 GENERI
 
-/api/category/get/byAll							-- Ottiene la LISTA di tutte le categorie
-/api/category/get/byId/{categoryId}					-- Ottiene una categoria (CATEGORY ID)
-/api/category/get/byTitle/{categoryTitle}				-- Ottiene una categoria (CATEGORIA TITLE)
-/api/category/delete/byId/{idCategory}				-- Elimina una categoria (ID CATEGORY)
+/api/category/get/byAll							                  -- Ottiene la LISTA di tutte le categorie
+/api/category/get/byId/{categoryId}					          -- Ottiene una categoria (CATEGORY ID)
+/api/category/get/byTitle/{categoryTitle}				      -- Ottiene una categoria (CATEGORIA TITLE)
+/api/category/delete/byId/{idCategory}				        -- Elimina una categoria (ID CATEGORY)
