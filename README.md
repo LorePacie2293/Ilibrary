@@ -24,3 +24,6 @@
   
   ![Immagine 2022-07-26 224957](https://user-images.githubusercontent.com/98269530/181116641-f2107644-59d7-466d-8079-27ce1f600620.png)
   
+  ----- Home page CARDS USER -----
+  
+  ![Immagine 2022-07-26 224957](https://user-images.githubusercontent.com/98269530/181130578-6c2356ba-380c-4332-a8b9-a48a7e96e816.png)
