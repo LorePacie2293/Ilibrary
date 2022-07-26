@@ -1,0 +1,27 @@
+<mat-card class="example-card" >
+  <mat-card-header>
+    <mat-card-title><b>{{book.bookTitle}}</b></mat-card-title>
+  </mat-card-header>
+  <img mat-card-image  height="300"  alt="Photo of a Shiba Inu"  [src]="imageReturn">
+  <mat-card-content>
+    <p class = "generi"><b>Generi:</b> <span *ngFor="let genere of book.booksCategory"> - {{genere.categoriaTitle}}</span></p>
+    <p class = "author"><b>Authore:</b> {{book.authorFname}} {{book.authorLname}}</p>
+    <p><b>Anno uscita:</b> {{book.releasedYear}}</p>
+    <p><b>Stock quanity:</b> {{book.stockQuantity}}</p>
+    <p><b>Pages:</b> {{book.pages}}</p>
+
+    <div *ngIf="isUser" class="row gx-2">
+      <mat-icon> attach_money</mat-icon>{{book.price}}
+      <button mat-icon-button (click)="insertBooksInTheCart(book.bookTitle)">
+        <mat-icon mmatBadgeColor="warn">shopping_cart</mat-icon>
+        Buy
+      </button>
+    </div>
+
+  </mat-card-content>
+
+  <mat-card-actions>
+    <button *ngIf="isAdmin" mat-raised-button color="warn" (click)="editBook()">Update</button>
+    <button *ngIf="isAdmin" mat-raised-button color="primary" (click)="deleteBook()">Remove</button>
+  </mat-card-actions>
+</mat-card>

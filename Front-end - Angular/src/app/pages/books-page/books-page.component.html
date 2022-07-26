@@ -1,0 +1,71 @@
+
+<app-toolbar (search)="startSearch($event)" [bottonViewBook] = setButtonViewToolbar></app-toolbar>
+<section class="content-main">
+
+  <div *ngIf="showError" class ="alert alert-danger">{{msgError}}</div>
+
+  <br><br>
+  <div class="table-responsive" >
+    <table class="table">
+      <thead>
+        <tr>
+          <th>Image</th>
+          <th>Id</th>
+          <th>Titolo</th>
+          <th>Nome autore</th>
+          <th>Cognome autore</th>
+          <th>Anno released</th>
+          <th>Stock quantity</th>
+          <th>Pages</th>
+          <th>Price</th>
+          <th></th>
+          <th></th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody>
+
+        <tr *ngFor="let book of books$ | paginate: {itemsPerPage: numRow, currentPage: page}">
+          <td class="tbl-string"><img [src]="imageReturn[book.bookId]"></td>
+          <td data-title="Id: " class="tbl-string">{{book.bookId}}</td>
+          <td data-title="Title" class="tbl-string">{{book.bookTitle}}</td>
+          <td data-title="Author firstName: " class="tbl-string">{{book.authorFname}}</td>
+          <td data-title="Author lastName: " class="tbl-string">{{book.authorLname}}</td>
+          <td data-title="Released year: " class="tbl-string">{{book.releasedYear}}</td>
+          <td data-title="Stock quantity: " class="tbl-string">{{book.stockQuantity}}</td>
+          <td data-title="Pages: " class="tbl-string">{{book.pages}}</td>
+          <td data-title="Price: " class="tbl-string"><mat-icon> attach_money</mat-icon> {{book.price}}</td>
+
+          <td>
+
+          <!-- Aggiunge un book al cart-->
+            <button  (click)="insertBooksInTheCart(book.bookTitle)" mat-icon-button>
+              <mat-icon mmatBadgeColor="warn">shopping_cart</mat-icon>
+              Buy
+            </button>
+          </td>
+          <td class = text-end>
+            <button mat-raised-button color="warn" *ngIf="isAdmin" (click)="remove(book.bookId)">Delete</button>
+          </td>
+          <td class = text-end>
+            <button mat-raised-button color="primary" *ngIf="isAdmin" (click)="update(book.bookId, 'update')">Update</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <nav>
+
+
+
+      <!-- pagination control -->
+      <pagination-controls
+        class="justify-content-center"
+        (pageChange)="page = $event"
+        previousLabel="prev"
+        nextLabel="next">
+
+      </pagination-controls>
+    </nav>
+  </div>
+
+</section>

@@ -1,0 +1,32 @@
+
+<!-- Dialog LOGIN se l'utente non è collegato-->
+
+  <h1 mat-dialog.title>Login</h1>
+
+  <div *ngIf="showErrorCredential" class ="alert alert-danger">{{errorMsg}}</div>
+  <div *ngIf="showLoginConfirm" class ="alert alert-success">{{successMsg}}</div>
+
+  <!-- Form di autenticazione-->
+
+    <!-- Inserimento NOME -->
+    <mat-form-field appearance="standard">
+      <mat-label>First name</mat-label>
+      <input matInput placeholder="insert name"  [(ngModel)]=userName>
+    </mat-form-field>
+
+    <!-- Inserimento COGNOME -->
+    <mat-form-field appearance="standard">
+      <mat-label>Last name</mat-label>
+      <input matInput placeholder="insert lastname" [(ngModel)]=password>
+    </mat-form-field>
+
+    <div mat-dialog-actions [align]="'end'" *ngIf="!showLoginConfirm">
+      <button mat-raised-button color="warn" mat-dialog-close>Close</button>
+      <button mat-raised-button color="primary" (click)="authButton()">Login</button>
+    </div>
+
+    <div mat-dialog-actions [align]="'end'" *ngIf="showLoginConfirm">
+      <button mat-raised-button color="warn" mat-dialog-close (click)="refreshPage()">Close</button>
+    </div>
+
+

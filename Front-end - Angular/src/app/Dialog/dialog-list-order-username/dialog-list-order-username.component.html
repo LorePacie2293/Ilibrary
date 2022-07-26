@@ -1,0 +1,43 @@
+<div *ngIf="showError" class ="alert alert-danger">{{errorMsg}}</div>
+<div *ngIf="!showError" class ="alert alert-success">{{message}}</div>
+
+<br><br>
+
+<section class="content-main">
+
+  <div class="table-responsive" >
+    <table class="table">
+      <thead>
+        <tr>
+          <th>ordineId</th>
+          <th>ordineData</th>
+          <th>Totale ordine</th>
+          <th>Dettagli ordine</th>
+        </tr>
+      </thead>
+      <tbody>
+
+        <tr *ngFor="let ordine of orders$ | paginate: {itemsPerPage: numRow, currentPage: page}">
+          <td data-title="Id: " class="tbl-string">{{ordine.ordineId}}</td>
+          <td data-title="Title" class="tbl-string">{{ordine.ordineData}}</td>
+          <td data-title="Author firstName: " class="tbl-string"><mat-icon> attach_money</mat-icon> {{ordine.ordinePrice}}</td>
+          <td>
+            <button (click)="displayOrderDetails(ordine.ordineId, ordine.username)" class="btn btn-light text-primary">Clicca</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <nav>
+
+      <!-- pagination control -->
+      <pagination-controls
+        class="justify-content-center"
+        (pageChange)="page = $event"
+        previousLabel="prev"
+        nextLabel="next">
+
+      </pagination-controls>
+    </nav>
+  </div>
+
+</section>

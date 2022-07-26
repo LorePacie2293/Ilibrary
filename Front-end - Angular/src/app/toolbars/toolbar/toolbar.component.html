@@ -1,0 +1,73 @@
+<mat-toolbar color="primary">
+
+  <!-- Bottone HOME -->
+  <button mat-icon-button>
+    <mat-icon>home</mat-icon>
+  </button>
+
+  <!-- Imposta WORD KEY ricerca-->
+  <div class="col-lg-4 col-md-6 me-auto">
+      <input type="text" placeholder="" class="form-control" [(ngModel)]="setFilter" (keyup)="emitSearch()">
+  </div>
+
+  <span class="example-spacer"></span>
+
+  <!-- Bottone GRID BOOK VIEW -->
+  <button mat-flat-button color="warn" routerLink="/book/listGrid" *ngIf="bottonViewBook == 'bookGrid'">Grid</button>
+
+  <!-- Bottone TABLE BOOK VIEW -->
+  <button mat-flat-button color="warn" routerLink="/book/listTable" *ngIf="bottonViewBook == 'bookTable'">Table</button>
+
+  <!-- Bottone INSERT NEW BOOK - SOLO ADMIN -->
+  <button *ngIf="isAdmin" mat-flat-button color="warn" (click)="dialogService.openDialogInsert('insert')">Insert Book</button>
+
+  <!-- Bottone TRIGGER MENU-->
+  <button mat-icon-button [matMenuTriggerFor]="menu">
+    <mat-icon>menu</mat-icon>
+  </button>
+
+   <!-- Bottone CART - SOLO USER-->
+   <button routerLink="/cart/username" mat-icon-button *ngIf="isUser">
+    <mat-icon matBadge="{{contCart}}" matBadgeColor="warn">shopping_cart</mat-icon>
+  </button>
+
+  <!-- Menu a COMPARSA-->
+  <mat-menu #menu="matMenu">
+
+    <!-- ACCEDI -->
+    <button *ngIf="!authService.userAuthStat()" mat-menu-item (click)="dialogService.openDialogLogin()">
+      <mat-icon>dialpad</mat-icon>
+      <span>Accedi</span>
+    </button>
+
+     <!-- REGISTRATI -->
+     <button *ngIf="!authService.userAuthStat()" mat-menu-item (click)="dialogService.openDialogRegister()">
+      <mat-icon>dialpad</mat-icon>
+      <span>Registrati</span>
+    </button>
+
+    <!-- LOGOUT -->
+    <button *ngIf="authService.userAuthStat()" mat-menu-item (click)="dialogService.openDialogLogout()">
+      <mat-icon>voicemail</mat-icon>
+      <span>Logout {{authService.logenUser()}}</span>
+    </button>
+
+
+    <button *ngIf="isUser" mat-menu-item routerLink="/ordini/username">
+      <mat-icon>voicemail</mat-icon>
+      <span>Lista ordini {{authService.logenUser()}}</span>
+    </button>
+
+    <button *ngIf="isAdmin" mat-menu-item routerLink="/ordini/all">
+      <mat-icon>voicemail</mat-icon>
+      <span>Lista ordini</span>
+    </button>
+
+    <button *ngIf="isAdmin" mat-menu-item routerLink="/users/all">
+      <mat-icon>voicemail</mat-icon>
+      <span>Lista users</span>
+    </button>
+
+  </mat-menu>
+
+</mat-toolbar>

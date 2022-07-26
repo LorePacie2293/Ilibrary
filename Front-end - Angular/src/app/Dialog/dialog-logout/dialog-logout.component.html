@@ -1,0 +1,23 @@
+<h1 mat-dialog.title><b>Logout</b></h1>
+
+<!-- Mostra conferma logout-->
+
+<h1 *ngIf="!stateLogout">Vuoi effettuare il logout ?</h1>
+
+<!-- Visualizza messaggio di FALLIMENTO-->
+<div *ngIf="stateLogout" class ="alert alert-success">
+  <h1>Logout effettuato con successo</h1>
+</div>
+
+<div mat-dialog-actions [align]="'end'" *ngIf="!stateLogout">
+  <button mat-raised-button color="warn" mat-dialog-close>No</button>
+  <button mat-raised-button color="primary" (click)="logoutButton()">Si</button>
+</div>
+
+<div *ngIf="stateLogout" mat-dialog-actions [align]="'end'">
+  <button mat-raised-button color="warn" mat-dialog-close (click)="refreshPage()">Close</button>
+</div>
+
+
+
+

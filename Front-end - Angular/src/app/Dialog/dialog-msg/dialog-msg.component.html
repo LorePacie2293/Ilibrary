@@ -1,0 +1,14 @@
+
+<!-- Visualizza messaggio di SUCCESSO-->
+<div *ngIf="typeAllert == true" class ="alert alert-success">
+  <h1><b>{{text}}</b></h1>
+</div>
+
+<!-- Visualizza messaggio di FALLIMENTO-->
+<div *ngIf="typeAllert == false" class ="alert alert-danger">
+  <h1><b>{{text}}</b></h1>
+</div>
+
+<div mat-dialog-actions [align]="'end'">
+  <button mat-raised-button color="warn" mat-dialog-close>Close</button>
+</div>

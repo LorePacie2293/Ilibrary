@@ -1,0 +1,11 @@
+<app-toolbar (search)="startSearch($event)" [bottonViewBook] = setButtonViewToolbar></app-toolbar>
+
+<div *ngIf="showError" class ="alert alert-danger">{{msgError}}</div>
+
+<div class="content">
+  <div fxLayout="row wrap" fxLayoutGap="26px grid">
+    <div [fxFlex]="(100 / numColonne) + '%'" fxFlex.xs="100" fxFlex.sm="50" fxLayoutAlign="start start" *ngFor="let num of books$">
+        <app-card-articolo [book]="num" (del)="removeBook($event)" (edit)="updateBook(num.bookId, 'update')"></app-card-articolo>
+    </div>
+  </div>
+</div>

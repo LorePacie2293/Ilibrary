@@ -1,0 +1,98 @@
+<h1 *ngIf="modality == 'update'"class ="alert alert-success"><b>UPDATE BOOK</b></h1>
+<h1 *ngIf="modality == 'insert'"class ="alert alert-success"><b>INSERT BOOK</b></h1>
+<div class="container mt-5">
+
+  <section class="content-main" style="max-width: 100%">
+
+	<div class="card mb-4">
+    	<div class="card-body">
+
+
+    <!-- Title book -->
+		<div class="row gx-1">
+			<div class="col-sm-6 mb-3">
+				<label for="titleBook" class="form-label">Title book:</label>
+				<input id="titleBook"  type="text" placeholder="" class="form-control" [(ngModel)]="book.bookTitle">
+			</div>
+      <div class="col-sm-6 mb-3">
+        <label for="titleBook2" class="form-label">Title book:</label>
+        <ng-multiselect-dropdown id="titleBook2"
+          [placeholder]="'Generi'"
+          [settings]="dropdownSettings"
+          [data]="dropdownList"
+          [(ngModel)]="selectedItems"
+          (onSelect)="onItemSelect($event)"
+          (onDeSelect)="onItemDeSelect($event)"
+          (onSelectAll)="onSelectAll($event)">
+          </ng-multiselect-dropdown>
+      </div>
+		</div>
+
+		<!-- Author first and last name -->
+		<div class="row gx-2">
+			<div class="col-sm-6 mb-3">
+				<label for="firstName" class="form-label">Author first name:</label>
+				<input id="FirstName"  type="text" placeholder="" class="form-control" [(ngModel)]="book.authorFname">
+			</div>
+			<div class="col-sm-6 mb-3">
+				<label for="lastName" class="form-label">Author last name:</label>
+				<input id="lastName"  type="text" placeholder="" class="form-control" [(ngModel)]="book.authorLname">
+			</div>
+		</div>
+
+
+		<div class="row gx-2">
+
+        <!-- year Released -->
+			<div class="col-sm-6 mb-3">
+				<label for="yearReleased" class="form-label">Year Released:</label>
+				<input id="yearReleased"  type="text" placeholder="" class="form-control" [(ngModel)]="book.releasedYear">
+			</div>
+
+      <!-- Stock quantity-->
+		  <div class="col-sm-6 mb-3">
+				<label for="stockQuantity" class="form-label">Stock Quantity:</label>
+				<input id="stockQuantity"  type="text" placeholder="" class="form-control" [(ngModel)]="book.stockQuantity">
+			</div>
+
+		</div>
+
+    <div class="row gx-2">
+
+      <!-- Pages -->
+
+        <div class="col-sm-6 mb-3">
+          <label for="pages" class="form-label">pages:</label>
+          <input id="pages"  type="text" placeholder="" class="form-control" [(ngModel)]="book.pages">
+        </div>
+
+      <!-- Price -->
+
+        <div class="col-sm-6 mb-3">
+          <label for="pages" class="form-label">price:</label>
+          <input id="pages"  type="text" placeholder="" class="form-control" [(ngModel)]="book.price">
+        </div>
+    </div>
+
+		<!-- Immagine -->
+		<div class="mb-4">
+			<label class="form-label">Immagine:</label>
+			<input class="form-control" type="file" (change)="onFileChanged($event)">
+		</div>
+
+    <br>
+    <div *ngIf="showError" class ="alert alert-danger">{{msgError}}</div>
+    <div *ngIf="showSuccess" class ="alert alert-success">{{msgSuccess}}</div>
+
+      <br>
+      <mat-card-actions>
+        <button *ngIf="modality == 'update'" mat-raised-button color="primary" (click)="save()">Aggiorna book</button>
+        <button *ngIf="modality == 'insert'" mat-raised-button color="primary" (click)="insert()">Inserisci book</button>
+        <button mat-raised-button color="warn" mat-dialog-close>Annulla</button>
+      </mat-card-actions>
+    </div>
+</div>
+
+</section>
+
+

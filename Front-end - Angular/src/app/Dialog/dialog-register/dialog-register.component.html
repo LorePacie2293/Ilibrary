@@ -1,0 +1,67 @@
+<h1 mat-dialog.title>Registrati</h1>
+
+<div class="container mt-5">
+
+
+  <section class="content-main" style="max-width: 100%">
+
+	<div class="card mb-4">
+    	<div class="card-body">
+
+
+		<!-- First name e last name -->
+		<div class="row gx-2">
+			<div class="col-sm-6 mb-3">
+				<label for="firstName" class="form-label">First name:</label>
+				<input id="FirstName"  type="text" placeholder="" class="form-control" [(ngModel)]="user$.userFirstName">
+			</div>
+			<div class="col-sm-6 mb-3">
+				<label for="lastName" class="form-label">Last name:</label>
+				<input id="lastName"  type="text" placeholder="" class="form-control" [(ngModel)]="user$.userLastName">
+			</div>
+		</div>
+
+
+		<div class="row gx-2">
+
+        <!-- Username-->
+			<div class="col-sm-6 mb-3">
+				<label for="yearReleased" class="form-label">Username:</label>
+				<input id="yearReleased"  type="text" placeholder="" class="form-control" [(ngModel)]="user$.username">
+			</div>
+
+      <!-- Password -->
+		  <div class="col-sm-6 mb-3">
+				<label for="stockQuantity" class="form-label">Password:</label>
+				<input id="stockQuantity"  type="text" placeholder="" class="form-control" [(ngModel)]="user$.userPassword">
+			</div>
+
+		</div>
+
+    <div class="row gx-1">
+      <div class="col-sm-6 mb-3">
+        <label for="pages" class="form-label">Email:</label>
+        <input id="pages"  type="text" placeholder="" class="form-control" [(ngModel)]="user$.userEmail">
+      </div>
+    </div>
+
+    <br>
+    <div *ngIf="showError" class ="alert alert-danger">{{msgError}}</div>
+    <div *ngIf="showSuccess" class ="alert alert-success">{{msgSuccess}}</div>
+
+    <br>
+
+    <div *ngIf="!showSuccess">
+      <button mat-raised-button color="primary" (click)="registerUser()">Register</button>
+      <button mat-raised-button color="warn" mat-dialog-close>Close</button>
+    </div>
+
+    <div *ngIf="showSuccess">
+      <button mat-raised-button color="warn" mat-dialog-close>Close</button>
+    </div>
+  </div>
+</div>
+
+</section>
+
+

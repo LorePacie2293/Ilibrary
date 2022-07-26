@@ -1,0 +1,50 @@
+
+<div *ngIf="showError" class ="alert alert-danger">{{errorMsg}}</div>
+<div *ngIf="!showError" class ="alert alert-success">{{message}}</div>
+
+<section class="content-main">
+
+  <div class="table-responsive" >
+    <table class="table">
+      <thead>
+        <tr>
+          <th>Image</th>
+          <th>Id</th>
+          <th>Titolo</th>
+          <th>Nome autore</th>
+          <th>Cognome autore</th>
+          <th>Anno released</th>
+          <th>Stock quantity</th>
+          <th>Pages</th>
+          <th>Price</th>
+        </tr>
+      </thead>
+      <tbody>
+
+        <tr *ngFor="let book of books$ | paginate: {itemsPerPage: numRow, currentPage: page}">
+          <td ><img [src]="imageReturn[book.bookId]"></td>
+          <td data-title="Id: " class="tbl-string">{{book.bookId}}</td>
+          <td data-title="Title" class="tbl-string">{{book.bookTitle}}</td>
+          <td data-title="Author firstName: " class="tbl-string">{{book.authorFname}}</td>
+          <td data-title="Author lastName: " class="tbl-string">{{book.authorLname}}</td>
+          <td data-title="Released year: " class="tbl-string">{{book.releasedYear}}</td>
+          <td data-title="Stock quantity: " class="tbl-string">{{book.stockQuantity}}</td>
+          <td data-title="Pages: " class="tbl-string">{{book.pages}}</td>
+          <td data-title="Price: " class="tbl-string"><mat-icon> attach_money</mat-icon> {{book.price}}</td>
+        </tr>
+      </tbody>
+    </table>
+    <nav>
+
+      <!-- pagination control -->
+      <pagination-controls
+        class="justify-content-center"
+        (pageChange)="page = $event"
+        previousLabel="prev"
+        nextLabel="next">
+
+      </pagination-controls>
+    </nav>
+  </div>
+
+</section>

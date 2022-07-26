@@ -1,0 +1,93 @@
+table{
+  width: 80%;
+  margin: auto;
+}
+
+img{
+  max-width: 100px;
+  max-height: 100px;
+}
+
+@media only screen and (max-width:640px){
+  thead{
+    display: none;
+  }
+
+  tbody, tr, td{
+    display:block;
+  }
+
+  td{
+    position: relative;
+    padding-left: 50%;
+    border:none;
+  }
+
+  td::before{
+    content: attr(data-title);
+    position: absolute;
+    left: 6px;
+    font-weight: bold;
+  }
+
+  tr{
+    border-bottom: 2px solid black;
+  }
+
+  .btn-light {
+    background-color: #fff;
+    border-color: rgba(108, 117, 125, 0.25);
+    margin-left: 2%;
+    margin-right: 2%;
+
+  }
+
+  .table thead th {
+    color: #adb5bd;
+    font-weight: 400;
+  }
+
+  .dropdown {
+    display: inline-block;
+
+  }
+
+  .table thead th {
+    color: #adb5bd;
+    font-weight: 400;
+  }
+
+  .table-lg td, .table-lg th {
+    padding: 0.8rem 1rem;
+  }
+
+  ul.row, ul.row-sm {
+    list-style: none;
+    padding: 0;
+  }
+
+  .table-hover tbody tr:hover td, .table-hover tbody tr:hover th {
+    background-color: azure;
+  }
+
+
+  .tbl-string {
+    padding-top: 16px;
+    font-size: 103%;
+  }
+
+  .infoBadge {
+    font-size: 110%;
+    font-weight: bold;
+  }
+
+  .text-end td{
+    display: inline-flexbox;
+  }
+}
+
+.confermButton{
+  float: right;
+  margin-top: 50px;
+  margin-right: 200px;
+}

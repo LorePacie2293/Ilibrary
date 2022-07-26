@@ -1,0 +1,58 @@
+<app-toolbar (search)="startSearch($event)"></app-toolbar>
+<br><br>
+
+<section class="content-main">
+
+
+  <div class="table-responsive" >
+    <table class="table">
+      <thead>
+        <tr>
+          <th>Id</th>
+          <th>Username</th>
+          <th>Nome</th>
+          <th>Cognome</th>
+          <th>Email</th>
+          <th>Password</th>
+          <th>Role</th>
+          <th>Ordini</th>
+          <th>Cart</th>
+        </tr>
+      </thead>
+      <tbody>
+
+        <tr *ngFor="let user of users$ | paginate: {itemsPerPage: numRow, currentPage: page}">
+          <td data-title="Id: " class="tbl-string">{{user.userId}}</td>
+          <td data-title="Username" class="tbl-string">{{user.username}}</td>
+          <td data-title="firstName: " class="tbl-string">{{user.userFirstName}}</td>
+          <td data-title="lastName: " class="tbl-string">{{user.userLastName}}</td>
+          <td data-title="Email: " class="tbl-string">{{user.userEmail}}</td>
+          <td data-title="Password: " class="tbl-string">{{user.userPassword}}</td>
+          <td data-title="Role: " class="tbl-string">{{user.userRole}}</td>
+          <td>
+            <button (click)="displayOrderByUsername(user.username)" mat-raised-button color="primary">Details</button>
+          </td>
+          <td>
+            <button (click)="displayCartDetails(user.username)" mat-raised-button color="primary">Details</button>
+          </td>
+          <td class = text-end>
+            <button *ngIf="user.userRole == 'USER'"  (click)="removeUser(user.username)" mat-raised-button color="warn">Delete</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <nav>
+
+      <!-- pagination control -->
+      <pagination-controls
+        class="justify-content-center"
+        (pageChange)="page = $event"
+        previousLabel="prev"
+        nextLabel="next">
+
+      </pagination-controls>
+    </nav>
+  </div>
+
+</section>
+
