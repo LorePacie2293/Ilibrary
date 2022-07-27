@@ -1,7 +1,7 @@
 # Ilibrary
 
   Tecnologie: 
-  - Front-end: Angular, Bootstrap5, AngularMaterials, Rjxs.
+  - Front-end: Angular, Bootstrap5, AngularMaterials, Rxjs.
   - Back-end: Spring-boot, Spring Data Jpa, Junit5, JWT.
   
   Funzionalità
